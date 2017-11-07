@@ -1,0 +1,12 @@
+Package: adaFilter
+Title: Adaptive Filtering Multiple Testing Procedures for Partial Conjunction
+    Hypotheses
+Version: 0.0.0.9000
+Authors@R: person("Jingshu", "Wang", email = "wangjingshususan@gmail.com", role = c("aut", "cre"))
+Description: Provides efficient multiple testing procedures when screening for
+    partial conjunction hypotheses.
+Imports: MASS
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
