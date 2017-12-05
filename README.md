@@ -5,4 +5,5 @@ R package for Adaptive Filtering Multiple Testing Procedures for Partial COnjunc
 
 ## Installation
 library(devtools)
-install_github("jingshuw/descend")
+
+install_github("jingshuw/adaFilter")
