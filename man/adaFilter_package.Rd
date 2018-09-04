@@ -13,4 +13,3 @@ partial conjunction hypotheses than previously methods
 especially when the number of
 candidate hypotheses is large while most of them are complete nulls
 }
-

@@ -34,4 +34,3 @@ a list of objects
 \description{
 Classical procedures for partial conjunction hypotheses
 }
-

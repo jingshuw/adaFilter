@@ -22,4 +22,3 @@ the BHPC p-value
 \description{
 Compute partial conjunction p-values
 }
-

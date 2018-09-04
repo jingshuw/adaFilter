@@ -10,4 +10,3 @@ FindEqualIdx(v1, v2, end, start = 1)
 v1 is non-decreasing, v2 is non-increasing, find the intersection point
 }
 \keyword{internal}
-

@@ -52,4 +52,3 @@ Multiple Testing Procedures for Partial Conjunction
 Hypotheses.
 }
 }
-
