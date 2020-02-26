@@ -142,8 +142,9 @@ AdaFilteringPC <- function(p.matrix,
 			gamma0 <- 0
 		else
 			gamma0 <- mean(candidates[nrow(candidates), 1:2])
-
-		decision <- combined.p[1, ] <= gamma0
+    
+		decision <- rep(FALSE,N.ori)
+		decision[sh.idx] <- combined.p[1, ] <= gamma0
 
     M <- sum(combined.p[2, ] <= gamma0)
 
