@@ -18,18 +18,18 @@ ComputeBHPC <- function(p.vec,
 						method = c("Bonferroni", "Fisher", "Simes")) {
 
 	method <- match.arg(method, c("Bonferroni", "Fisher", "Simes"))
-
-	n <- length(p.vec)
-
+	
+	n <- sum(!is.na(p.vec))
+	
 	p.selected <- sort(p.vec, decreasing = T)[1:(n - r + 1)]
 
 	if (method == "Bonferroni") {
-		return((n-r+1) * p.selected[n-r+1])
+	  return((n-r+1) * p.selected[n-r+1])
 	} else if (method == "Fisher") {
-		df <- 2 * (n - r + 1)
-		return(pchisq( -2*sum(log(p.selected)), df, lower.tail=FALSE))
+	  df <- 2 * (n - r + 1)
+	  return(pchisq( -2*sum(log(p.selected)), df, lower.tail=FALSE))
 	} else if (method == "Simes") {
-		return(min((n -r + 1)/((n - r + 1) : 1) * p.selected))
+	  return(min((n -r + 1)/((n - r + 1) : 1) * p.selected))
 	}
 }
 
@@ -52,17 +52,27 @@ ClassicalMTP <- function(p.matrix,
 						 type.I.err = c("FWER", "FDR", "PFER")) {
   	method <- match.arg(method, c("Bonferroni", "Fisher", "Simes"))
 	type.I.err <- match.arg(type.I.err, c("FWER", "FDR", "PFER"))
-
-	bhpc.pvalues <- apply(p.matrix, 1, ComputeBHPC, r, method)
-
+	
+	n.noNA <- rowSums(!is.na(p.matrix))
+	sh.idx <- which((n.noNA - r + 1) > 0)
+	
+	bhpc.pvalues <- apply(p.matrix[sh.idx,], 1, ComputeBHPC, r, method)
+	
 	if (type.I.err == "FWER")
-		adjust.bhpc.p <- p.adjust(bhpc.pvalues, "bonferroni")
+	  adjust.bhpc.p <- p.adjust(bhpc.pvalues, "bonferroni")
 	else if (type.I.err == "PFER")
-		adjust.bhpc.p <- bhpc.pvalues * length(bhpc.pvalues)
+	  adjust.bhpc.p <- bhpc.pvalues * length(bhpc.pvalues)
 	else
-		adjust.bhpc.p <- p.adjust(bhpc.pvalues, "BH")
-
-	return(list(decision = adjust.bhpc.p <= alpha,
-	            BHPC.p = bhpc.pvalues))
-
+	  adjust.bhpc.p <- p.adjust(bhpc.pvalues, "BH")
+	
+	decision = rep(FALSE, nrow(p.matrix))
+	decision[sh.idx] = adjust.bhpc.p <= alpha
+	
+	BHPC.p = rep(NA, nrow(p.matrix))
+	BHPC.p[sh.idx] = bhpc.pvalues
+	
+	return(list(decision = decision,
+	            BHPC.p = BHPC.p))
+	
 }
+
