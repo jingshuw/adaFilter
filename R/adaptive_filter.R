@@ -63,7 +63,12 @@ AdaFilteringPC <- function(p.matrix,
 	N <- nrow(p.matrix)
 
   n.noNA <- rowSums(!is.na(p.matrix))
-  sh.idx <- which(rowSums(p.matrix <= alpha/(n.noNA - r + 1)) >= (r - 1))
+  sh.idx <- which((n.noNA - r + 1) > 0 & rowSums(p.matrix <= alpha/(n.noNA - r + 1),na.rm = T) >= (r - 1))
+  
+  if(length(sh.idx) == 0){
+    decision = rep(FALSE, N)
+    combined.p.final = matrix(NA, nrow = 2, ncol = N)
+  } else{
 
   p.mat.sh <- p.matrix[sh.idx, ]
 
@@ -88,9 +93,10 @@ AdaFilteringPC <- function(p.matrix,
 
 		m <- ifelse(sorted.f[m.prime] <= alpha/(m.prime - 1),
 					m.prime, m.prime - 1)
-
-		decision <- combined.p[1, ] <= alpha/m
-    M <- m
+		
+		decision <- rep(FALSE,N.ori)
+		decision[sh.idx] <- combined.p[1, ] <= alpha/m
+		M <- m
 	} else {
 		sorted.s <- sort(combined.p[1, ], method = "quick")
 		combined.mat <- matrix(0, 2 * N, 3)
@@ -142,14 +148,17 @@ AdaFilteringPC <- function(p.matrix,
 			gamma0 <- 0
 		else
 			gamma0 <- mean(candidates[nrow(candidates), 1:2])
-
-		decision <- combined.p[1, ] <= gamma0
+    
+		decision <- rep(FALSE,N.ori)
+		decision[sh.idx] <- combined.p[1, ] <= gamma0
 
     M <- sum(combined.p[2, ] <= gamma0)
-
-
-
-	}
+    
+    combined.p.final = matrix(NA, nrow = 2, ncol = N.ori)
+    combined.p.final[,sh.idx] = combined.p
+	  }
+  }
+  
 	return(list(decision = decision,
 				select.p = combined.p[1, ],
 				filter.p = combined.p[2, ]))
