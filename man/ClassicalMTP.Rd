@@ -4,31 +4,30 @@
 \alias{ClassicalMTP}
 \title{Classical procedures for partial conjunction hypotheses}
 \usage{
-ClassicalMTP(p.matrix, alpha, r, method = c("Bonferroni", "Fisher", "Simes"),
-  type.I.err = c("FWER", "FDR", "PFER"))
+ClassicalMTP(p.matrix, alpha, r, method = c("Bonferroni", "Fisher",
+  "Simes"), type.I.err = c("FWER", "FDR", "PFER"))
 }
 \arguments{
-\item{p.matrix}{an M*n matrix of p-values. M is the
-number of PC hypotheses and n is the number of studies}
+\item{p.matrix}{an \code{M * n} matrix of p-values. \code{M} is the
+number of PC hypotheses and \code{n} is the number of studies. Missing values are allowed.}
 
-\item{alpha}{control level of the chosen simultaneous error}
+\item{alpha}{control level of the chosen simultaneous error. Default is \code{0.05}.}
 
-\item{r}{the smallest number of nonnull individual hypotheses
-for a nonnull partial conjunction hypotheses}
+\item{r}{the required replicability level, i.e. the smallest number of nonnull individual hypotheses
+for a nonnull PC hypotheses}
 
 \item{method}{the method to construct partial conjunction p-values. 
-There are currently 3 options using either Bonferroni or Fisher or 
-Simes derived partial conjunction p-value}
+There are currently 3 options:  "Bonferroni",  "Fisher" and  
+"Simes". The default is "Bonferroni".}
 
-\item{type.I.err}{for FWER and PFER control,
-the adaptive filtering Bonferroni procedure is used;
-for FDR control, the adaptive filtering BH procedure is used}
+\item{type.I.err}{one of "FDR", "FWER" or "PFER", with the default type I error "FDR". For FWER and PFER control, the adaFilter Bonferroni procedure is performed;
+for FDR control, the adaFilter BH procedure is performed.}
 }
 \value{
 a list of objects
 \describe{
 \item{decision}{a length M vector of 1 and 0s indicating whether the corresponding PC hypothesis is rejected or not}
-\item{BHPC.p}{the length M vector of partial conjunction p-values}
+\item{PC.pvalues}{the length M vector of partial conjunction p-values}
 }
 }
 \description{

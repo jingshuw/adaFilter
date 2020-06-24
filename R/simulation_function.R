@@ -23,9 +23,7 @@
 #' }
 #' 
 #' @references {
-#' J. Wang, C. Sabatti and A. B. Owen (2016). Adaptive Filtering
-#' Multiple Testing Procedures for Partial Conjunction
-#' Hypotheses.
+#' J. Wang, L. Gui, W. J. Su, C. Sabatti and A. B. Owen (2020). Detecting Multiple Replicating Signals using Adaptive Filtering Procedures
 #' }
 #'
 #' @export

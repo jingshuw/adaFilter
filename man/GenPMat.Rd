@@ -5,8 +5,8 @@
 \title{Generate p-value matrix for simulation}
 \usage{
 GenPMat(M = 1000, n = 2, r = 2, all.zero.frac = 0.5,
-  alternative.frac = 0.1, mu = c(3, 4, 6), rho = 0, block.size = 10,
-  one.sided = F)
+  alternative.frac = 0.1, mu = c(3, 4, 6), rho = 0,
+  block.size = 10, one.sided = F)
 }
 \arguments{
 \item{M}{number of partial conjunction hypotheses}
@@ -45,8 +45,6 @@ Generate p-value matrix for simulation
 }
 \references{
 {
-J. Wang, C. Sabatti and A. B. Owen (2016). Adaptive Filtering
-Multiple Testing Procedures for Partial Conjunction
-Hypotheses.
+J. Wang, L. Gui, W. J. Su, C. Sabatti and A. B. Owen (2020). Detecting Multiple Replicating Signals using Adaptive Filtering Procedures
 }
 }
