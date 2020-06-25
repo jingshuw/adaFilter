@@ -1,6 +1,5 @@
 Package: adaFilter
-Title: Adaptive Filtering Multiple Testing Procedures for Partial Conjunction
-    Hypotheses
+Title: Adaptive Filtering Multiple Testing Procedures for finding multiple replicating signals
 Version: 1.0.0
 Authors@R: person("Jingshu", "Wang", email = "wangjingshususan@gmail.com", role = c("aut", "cre"))
 Description: Provides efficient multiple testing procedures when screening for
