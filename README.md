@@ -1,9 +1,11 @@
 # adaFilter
 
-R package for Adaptive Filtering Multiple Testing Procedures for Partial COnjunction Hypotheses
+An R package for finding mutliple replicating signals under the Partial Conjunction framework. Our method adaFilter contains two procedures: adaFilter Bonferroni and adaFilter BH that can effciently identify signals that replicate in at least $r$ studies
 
 
 ## Installation
+```{r}
 library(devtools)
 
 install_github("jingshuw/adaFilter")
+```
