@@ -46,4 +46,6 @@ result <- ClassicalMTP(data$pvalue.mat, r = 3, alpha = 0.05, method = "Simes")
 print(which(result$decision == 1 & data$truth.pc))  
 ```
 which only rejects 179, 183 and 180 true positives respectively.
- 
+
+## Reference
+J. Wang, L. Gui, W. J. Su, C. Sabatti and A. B. Owen (2020). Detecting Multiple Replicating Signals using Adaptive Filtering Procedures 
