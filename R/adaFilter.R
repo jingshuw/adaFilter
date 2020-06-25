@@ -59,7 +59,7 @@ adaFilter <- function(p.matrix,
 					  alpha = 0.05,
 					  fast = F) {
 
-	type.I.err <- match.arg(type.I.err, c("FWER", "FDR", "PFER"))
+	type.I.err <- match.arg(type.I.err, c("FDR", "FWER", "PFER"))
 
 	n <- ncol(p.matrix)
 

@@ -46,12 +46,12 @@ computePC <- function(p.vec,
 #' @export
 
 ClassicalMTP <- function(p.matrix,
-						 alpha,
 						 r,
+						 alpha = 0.05,
 						 method = c("Bonferroni", "Fisher", "Simes"),
-						 type.I.err = c("FWER", "FDR", "PFER")) {
+						 type.I.err = c("FDR", "FWER", "PFER")) {
   	method <- match.arg(method, c("Bonferroni", "Fisher", "Simes"))
-	type.I.err <- match.arg(type.I.err, c("FWER", "FDR", "PFER"))
+	type.I.err <- match.arg(type.I.err, c("FDR", "FWER", "PFER"))
 	
 	n.noNA <- rowSums(!is.na(p.matrix))
 	sh.idx <- which((n.noNA - r + 1) > 0)
