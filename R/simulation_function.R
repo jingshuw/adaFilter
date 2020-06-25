@@ -32,7 +32,7 @@
 GenPMat <- function(M = 1000,
 					n = 2,
 					r = 2,
-					all.zero.frac = 0.5,
+					all.zero.frac = 0.8,
 					alternative.frac = 0.1,
 					mu = c(3, 4, 6),
 					rho = 0,
