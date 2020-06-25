@@ -48,4 +48,4 @@ print(which(result$decision == 1 & data$truth.pc))
 which only rejects 179, 183 and 180 true positives respectively.
 
 ## Reference
-J. Wang, L. Gui, W. J. Su, C. Sabatti and A. B. Owen (2020). Detecting Multiple Replicating Signals using Adaptive Filtering Procedures 
+J. Wang, L. Gui, W. J. Su, C. Sabatti and A. B. Owen (2020). Detecting Multiple Replicating Signals using Adaptive Filtering Procedures [Arxiv](https://arxiv.org/abs/1610.03330v4)
