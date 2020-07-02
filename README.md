@@ -1,6 +1,8 @@
 # adaFilter
 
-This is an R package for finding mutliple replicating signals under the Partial Conjunction framework. Our method adaFilter contains two procedures: adaFilter Bonferroni and adaFilter BH that can effciently identify signals that replicate in at least r studies
+This is an R package for finding mutliple replicating signals under the Partial Conjunction framework. Our method adaFilter contains two procedures: adaFilter Bonferroni and adaFilter BH that can effciently identify signals that replicate in at least r studies.
+
+![Illustration of the adaFilter idea for ]
 
 
 ## Installation
@@ -11,7 +13,7 @@ install_github("jingshuw/adaFilter")
 ```
 
 ## Example
-AdaFilter starts with a p-value matrix of size M * n where M is the number of hypotheses in one study and n is the number of studies. In some high-throughput genetic experiments, it is common that some hypotheses have missing p-values in some studies. AdaFilter allows missing values in the p-value matrix (which are simply NA values).
+AdaFilter starts with a p-value matrix of size `M * n` where `M` is the number of hypotheses in one study and `n` is the number of studies. In some high-throughput genetic experiments, it is common that some hypotheses have missing p-values in some studies. AdaFilter allows missing values in the p-value matrix (which are simply NA values).
 
 Testing for replicability, we reject a hypothesis only when the individual hypotheses are nonnull in at least r studies. For instance, for genetic data, we reject a gene only when there is signal in at least r studies. Here, r is a user-specified replicability level, and should be at least 2.
 
