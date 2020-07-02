@@ -2,7 +2,7 @@
 
 This is an R package for finding mutliple replicating signals under the Partial Conjunction framework. Our method adaFilter contains two procedures: adaFilter Bonferroni and adaFilter BH that can effciently identify signals that replicate in at least `r` out of `n` studies.
 
-![Illustration of the adaFilter idea for `n = r = 2`](https://drive.google.com/file/d/11IRT1S0DgIfKCk6MCbTSAhRT5_UrF-xL/view?usp=sharing)
+![Illustration of the adaFilter idea for `n = r = 2`](http://jingshuw.org/uploads/1/2/2/1/122138403/demo.png)
 
 
 ## Installation
