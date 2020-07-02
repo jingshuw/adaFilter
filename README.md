@@ -5,7 +5,7 @@ This is an R package for finding mutliple replicating signals under the Partial 
 Illustration of the adaFilter idea for `n = r = 2`:
 ![Illustration of the adaFilter idea for `n = r = 2`](http://jingshuw.org/uploads/1/2/2/1/122138403/demo.png)
 
-<img src="http://jingshuw.org/uploads/1/2/2/1/122138403/demo.png" alt="alt text" width="100" height="100">
+<img src="http://jingshuw.org/uploads/1/2/2/1/122138403/demo.png" alt="alt text" width="250" height="250">
 
 
 
