@@ -29,6 +29,7 @@
 #' @export
 
 
+
 GenPMat <- function(M = 1000,
 					n = 2,
 					r = 2,
